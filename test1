@@ -1,0 +1,35 @@
+-- Menu đơn giản để chạy các script
+local function showMenu()
+    print("=== MENU ===")
+    print("1. Chạy script Lua")
+    print("0. Thoát")
+    io.write("Chọn một chức năng: ")
+    return io.read()
+end
+
+-- Script Lua bạn muốn chạy
+local function runScript()
+    print("Đang chạy script Lua...")
+    getgenv().Key = "MARU-D2N1F-DCUN-WMPWZ-UCUC-8KPKX"
+    getgenv().id = "1207978541585661952"
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/xshiba/MaruBitkub/main/Mobile.lua"))()
+    print("Script đã được thực thi.")
+end
+
+-- Chương trình chính
+local function main()
+    while true do
+        local choice = showMenu()
+        if choice == "1" then
+            runScript()
+        elseif choice == "0" then
+            print("Thoát chương trình. Tạm biệt!")
+            break
+        else
+            print("Vui lòng chọn một tùy chọn hợp lệ!")
+        end
+    end
+end
+
+-- Chạy chương trình chính
+main()
