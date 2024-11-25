@@ -2,19 +2,38 @@ local ScreenGui = Instance.new("ScreenGui")
 local Frame = Instance.new("Frame")
 local ButtonRunScript = Instance.new("TextButton")
 local ButtonExit = Instance.new("TextButton")
+local TextBoxKey = Instance.new("TextBox")
+local Label = Instance.new("TextLabel")
 
 ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 ScreenGui.Name = "ScriptMenu"
 
 Frame.Parent = ScreenGui
-Frame.Size = UDim2.new(0, 300, 0, 200)
-Frame.Position = UDim2.new(0.5, -150, 0.5, -100)
+Frame.Size = UDim2.new(0, 300, 0, 250)
+Frame.Position = UDim2.new(0.5, -150, 0.5, -125)
 Frame.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
 Frame.BorderSizePixel = 0
 
+Label.Parent = Frame
+Label.Size = UDim2.new(0, 280, 0, 30)
+Label.Position = UDim2.new(0, 10, 0, 10)
+Label.Text = "Nhập Key:"
+Label.TextColor3 = Color3.fromRGB(255, 255, 255)
+Label.Font = Enum.Font.SourceSans
+Label.TextSize = 20
+
+TextBoxKey.Parent = Frame
+TextBoxKey.Size = UDim2.new(0, 280, 0, 40)
+TextBoxKey.Position = UDim2.new(0, 10, 0, 50)
+TextBoxKey.PlaceholderText = "Nhập Key tại đây"
+TextBoxKey.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextBoxKey.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+TextBoxKey.Font = Enum.Font.SourceSans
+TextBoxKey.TextSize = 20
+
 ButtonRunScript.Parent = Frame
 ButtonRunScript.Size = UDim2.new(0, 280, 0, 50)
-ButtonRunScript.Position = UDim2.new(0, 10, 0, 10)
+ButtonRunScript.Position = UDim2.new(0, 10, 0, 100)
 ButtonRunScript.Text = "Chạy Script"
 ButtonRunScript.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
 ButtonRunScript.TextColor3 = Color3.fromRGB(255, 255, 255)
@@ -23,15 +42,17 @@ ButtonRunScript.TextSize = 24
 
 ButtonExit.Parent = Frame
 ButtonExit.Size = UDim2.new(0, 280, 0, 50)
-ButtonExit.Position = UDim2.new(0, 10, 0, 70)
+ButtonExit.Position = UDim2.new(0, 10, 0, 160)
 ButtonExit.Text = "Thoát"
 ButtonExit.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
 ButtonExit.TextColor3 = Color3.fromRGB(255, 255, 255)
 ButtonExit.Font = Enum.Font.SourceSans
 ButtonExit.TextSize = 24
 
+local correctKey = "MARU-D2N1F-DCUN-WMPWZ-UCUC-8KPKX"
+
 local function executeScript()
-    getgenv().Key = "MARU-D2N1F-DCUN-WMPWZ-UCUC-8KPKX"
+    getgenv().Key = correctKey
     getgenv().id = "1207978541585661952"
     local status, err = pcall(function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/xshiba/MaruBitkub/main/Mobile.lua"))()
@@ -45,7 +66,12 @@ local function executeScript()
 end
 
 ButtonRunScript.MouseButton1Click:Connect(function()
-    executeScript()
+    local enteredKey = TextBoxKey.Text
+    if enteredKey == correctKey then
+        executeScript()
+    else
+        warn("Key không đúng!")
+    end
 end)
 
 ButtonExit.MouseButton1Click:Connect(function()
