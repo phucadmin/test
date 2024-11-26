@@ -1,0 +1,12 @@
+--[[
+ .____                  ________ ___.    _____                           __                
+ |    |    __ _______   \_____  \\_ |___/ ____\_ __  ______ ____ _____ _/  |_  ___________ 
+ |    |   |  |  \__  \   /   |   \| __ \   __\  |  \/  ___// ___\\__  \\   __\/  _ \_  __ \
+ |    |___|  |  // __ \_/    |    \ \_\ \  | |  |  /\___ \\  \___ / __ \|  | (  <_> )  | \/
+ |_______ \____/(____  /\_______  /___  /__| |____//____  >\___  >____  /__|  \____/|__|   
+         \/          \/         \/    \/                \/     \/     \/                   
+          \_Welcome to LuaObfuscator.com   (Alpha 0.10.8) ~  Much Love, Ferib 
+
+]]--
+
+local v0=Instance.new("ScreenGui");local v1=Instance.new("Frame");local v2=Instance.new("TextButton");local v3=Instance.new("TextButton");v0.Parent=game.Players.LocalPlayer:WaitForChild("PlayerGui");v0.Name="ScriptMenu";v1.Parent=v0;v1.Size=UDim2.new(0 + 0 ,680 -380 ,877 -(282 + 595) ,200);v1.Position=UDim2.new(0.5, -(1787 -(1523 + 114)),0.5 + 0 , -(142 -42));v1.BackgroundColor3=Color3.fromRGB(1105 -(68 + 997) ,1310 -(226 + 1044) ,40);v1.BorderSizePixel=0 -0 ;v2.Parent=v1;v2.Size=UDim2.new(0 -0 ,1077 -797 ,117 -(32 + 85) ,159 -109 );v2.Position=UDim2.new(0 + 0 ,10,0 + 0 ,448 -(145 + 293) );v2.Text="Chạy Script";v2.BackgroundColor3=Color3.fromRGB(430 -(44 + 386) ,1212 -(892 + 65) ,0 -0 );v2.TextColor3=Color3.fromRGB(471 -216 ,255,255);v2.Font=Enum.Font.SourceSans;v2.TextSize=43 -19 ;v3.Parent=v1;v3.Size=UDim2.new(350 -(87 + 263) ,460 -(67 + 113) ,0 + 0 ,122 -72 );v3.Position=UDim2.new(0 + 0 ,6 + 4 ,0 -0 ,1022 -(802 + 150) );v3.Text="Thoát";v3.BackgroundColor3=Color3.fromRGB(686 -431 ,0 -0 ,0 + 0 );v3.TextColor3=Color3.fromRGB(1114 -(814 + 45) ,1252 -(915 + 82) ,14 + 241 );v3.Font=Enum.Font.SourceSans;v3.TextSize=67 -43 ;local function v28() local v29=0 + 0 ;local v30;local v31;while true do if (v29==1) then v30,v31=pcall(function() loadstring(game:HttpGet("https://raw.githubusercontent.com/xshiba/MaruBitkub/main/Mobile.lua"))();end);if v30 then print("Script đã được chạy thành công!");else warn("Có lỗi xảy ra khi chạy script: "   .. v31 );end break;end if (v29==0) then getgenv().Key="MARU-D2N1F-DCUN-WMPWZ-UCUC-8KPKX";getgenv().id="1207978541585661952";v29=1 -0 ;end end end v2.MouseButton1Click:Connect(function() v28();end);v3.MouseButton1Click:Connect(function() v0:Destroy();end);
